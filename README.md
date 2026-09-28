@@ -13,13 +13,13 @@ In advanced semiconductor manufacturing, inline sensor datasets exhibit high dim
 
 ---
 
-## 📊 Benchmark & Performance
+## 📊 Benchmark & Performance Comparison
 
-| Algorithm | Imbalance Strategy | Test ROC-AUC | Key Feature Attribution |
-| :--- | :---: | :---: | :--- |
-| **XGBoost** | `scale_pos_weight = 14.10` | **0.7148** | Top 10 Sensors + Gemini LLM Diagnostics |
-| **Random Forest** | *In Progress* | - | SHAP TreeExplainer |
-| **SVM / KNN / Decision Tree** | *In Progress* | - | Benchmark Comparison |
+| Algorithm | Imbalance Strategy / Threshold | Precision (Fail) | Recall (Fail) | Test ROC-AUC | Top Yield Killer Drivers (XAI) |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **XGBoost** | `scale_pos_weight = 14.10` | 0.29 | 0.10 | 0.7148 | Sensor 103, 214, 489 |
+| **Random Forest** | `balanced_subsample` (Thresh: 0.1312) | **0.23** | **0.43** | **0.7455** | Sensors 213/212, 121/122 (SHAP) |
+| **SVM / KNN / Decision Tree** | *In Progress* | - | - | - | Benchmark Comparison |
 
 ---
 
